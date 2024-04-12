@@ -1,6 +1,6 @@
 <h2>Welcome to my MITxPRO Capstone Project: Banking App</h2>
 
-<img src="public/keystone.jpg"></>
+<img src="public/keystone.jpg">
 <br></br>
 <p>This app is built with MERN(MongoDB, Express, React, and Node.js).  The UI provides a create account form for user name, email, and password.  Once signed in the user can deposit, withdraw, and check balance.  The user info is saved across sign in sessions within the Mongo database.  Routes to handle HTTP requests are in the index.js and dal.js files.</p>
 
