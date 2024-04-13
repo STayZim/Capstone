@@ -9,7 +9,7 @@ MongoClient.connect(url, { useUnifiedTopology: true }, function(err, client) {
     console.log("Connected successfully to db server");
 
     // connect to myproject database
-    db = client.db('first-project');
+    db = client.db('db-mongo11');
 });
 
 // create user account
