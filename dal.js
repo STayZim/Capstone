@@ -1,6 +1,6 @@
 const MongoClient = require('mongodb').MongoClient;
 //const url         = 'mongodb://localhost:27017';
-const url         = 'mongodb+srv://db-mongo11-6a361d64.mongo.ondigitalocean.com';
+const url         = 'mongodb+srv://doadmin:show-password@db-mongo11-6a361d64.mongo.ondigitalocean.com/admin?tls=true&authSource=admin&replicaSet=db-mongo11';
 
 //let db            = null;
  
