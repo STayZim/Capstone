@@ -8,7 +8,7 @@ let db            = null;
 MongoClient.connect(url, { useUnifiedTopology: true }, function(err, client) {
     console.log("Connected successfully to db server");
 
-    // connect to myproject database
+    // connect to database
     db = client.db('db-mongo11');
 });
 
