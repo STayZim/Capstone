@@ -2,14 +2,14 @@ const MongoClient = require('mongodb').MongoClient;
 //const url         = 'mongodb://localhost:27017';
 const url         = 'mongodb+srv://db-mongo11-6a361d64.mongo.ondigitalocean.com';
 
-let db            = null;
+//let db            = null;
  
 // connect to mongo
 MongoClient.connect(url, { useUnifiedTopology: true }, function(err, client) {
     console.log("Connected successfully to db server");
 
     // connect to database
-    db = client.db('db-mongo11');
+   const db = client.db('db-mongo11-6a361d64');
 });
 
 // create user account
