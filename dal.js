@@ -1,15 +1,19 @@
-require("dotenv").config();
+require('dotenv').config();
 const MongoClient = require('mongodb').MongoClient;
 //const url         = 'mongodb://localhost:27017';
-const url         = process.env.DATABASE_URL;
-//let db            = null;
+const url         = 'mongodb+srv://doadmin:4MTLk0F625r18s9o@dbaas-db-2987951-abd3c119.mongo.ondigitalocean.com/admin?tls=true&authSource=admin&replicaSet=dbaas-db-2987951';
+let db = null;
+//const url         = process.env.DATABASE_URL;
+
  
 // connect to mongo
-MongoClient.connect(url, { useUnifiedTopology: true }, function(err, client) {
+let client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true }, function(err, client) {
     console.log("Connected successfully to db server");
+});
 
-    // connect to database
-   const db = client.db('');
+client.connect().then((client) => {
+    db=client.db('my-project');
+
 });
 
 // create user account
@@ -20,8 +24,8 @@ function create(name, email, password){
         collection.insertOne(doc, {w:1}, function(err, result) {
             err ? reject(err) : resolve(doc);
         });    
-    })
-}
+    });
+};
 
 // find user account
 function find(email){
@@ -32,8 +36,8 @@ function find(email){
             .toArray(function(err, docs) {
                 err ? reject(err) : resolve(docs);
         });    
-    })
-}
+    });
+};
 
 // find user account
 function findOne(email){
@@ -43,8 +47,8 @@ function findOne(email){
             .findOne({email: email})
             .then((doc) => resolve(doc))
             .catch((err) => reject(err));    
-    })
-}
+    });
+};
 
 // update - deposit/withdraw amount
 function update(email, amount){
@@ -62,7 +66,7 @@ function update(email, amount){
 
 
     });    
-}
+};
 
 // all users
 function all(){
@@ -73,8 +77,11 @@ function all(){
             .toArray(function(err, docs) {
                 err ? reject(err) : resolve(docs);
         });    
-    })
-}
+    });
+};
+
 
 
 module.exports = {create, findOne, find, update, all};
+
+
