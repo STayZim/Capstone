@@ -5,7 +5,7 @@ const url         = process.env.DATABASE_URL;
 
  
 // connect to mongo
-let client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true }, function(err, client) {
+let client = new MongoClient(url, { useUnifiedTopology: true }, function(err, client) {
     console.log("Connected successfully to db server");
 });
 
