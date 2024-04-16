@@ -1,9 +1,7 @@
 require('dotenv').config();
 const MongoClient = require('mongodb').MongoClient;
-//const url         = 'mongodb://localhost:27017';
-const url         = 'mongodb+srv://doadmin:4MTLk0F625r18s9o@dbaas-db-2987951-abd3c119.mongo.ondigitalocean.com/admin?tls=true&authSource=admin&replicaSet=dbaas-db-2987951';
 let db = null;
-//const url         = process.env.DATABASE_URL;
+const url         = process.env.DATABASE_URL;
 
  
 // connect to mongo
