@@ -9,7 +9,7 @@ function CreateAccount(){
       header="Create Account"
       status={status}
       body={show ? 
-        <CreateForm setShow={setShow}/>  
+        <CreateForm setShow={setShow}/> : 
         <CreateMsg setShow={setShow}/>}
     />
   )
