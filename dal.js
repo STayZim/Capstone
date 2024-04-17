@@ -5,7 +5,7 @@ let db = null;
 
  
 // connect to mongo
-let client = MongoClient({DATABASE_URL}, function(err, client) {
+let client = MongoClient(DATABASE_URL, function(err, client) {
     console.log("Connected successfully to db server");
 });
 
