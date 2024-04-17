@@ -1,11 +1,11 @@
 require('dotenv').config();
 const MongoClient = require('mongodb').MongoClient;
 let db = null;
-//const url         = DATABASE_URL;
+const url         = process.env.DATABASE_URL;
 
  
 // connect to mongo
-let client = MongoClient(DATABASE_URL, function(err, client) {
+let client = MongoClient(url, function(err, client) {
     console.log("Connected successfully to db server");
 });
 
